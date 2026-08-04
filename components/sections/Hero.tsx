@@ -20,18 +20,18 @@ const item = {
 
 export default function Hero() {
   return (
-    <section className="relative z-[5] mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 px-6 pb-32 pt-8 md:px-12 lg:grid-cols-12">
+    <section className="relative z-[5] mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-4 pb-16 pt-4 sm:px-6 sm:pb-24 sm:pt-6 md:px-12 lg:grid-cols-12 lg:gap-14 lg:pb-32 lg:pt-8">
       {/* LEFT: copy */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="animate-hero-enter flex flex-col items-start gap-6 text-left lg:col-span-6"
+        className="animate-hero-enter flex flex-col items-start gap-5 text-left sm:gap-6 lg:col-span-6"
       >
 
         <motion.h1
           variants={item}
-          className="text-4xl font-[700] leading-tight text-[#0a0a0f] dark:text-white sm:text-5xl xl:text-6xl"
+          className="text-[2rem] font-[700] leading-[1.12] text-[#0a0a0f] dark:text-white sm:text-[2.6rem] sm:leading-tight lg:text-5xl xl:text-6xl"
           style={{
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
           }}
@@ -44,7 +44,7 @@ export default function Hero() {
             animate={{ scaleX: 1, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             style={{ transformOrigin: "left" }}
-            className="box-decoration-clone inline-block rounded-2xl bg-[#2323FF] px-3 py-0.5 text-white"
+            className="box-decoration-clone inline-block rounded-xl bg-[#2323FF] px-2.5 py-0.5 text-white sm:rounded-2xl sm:px-3"
           >
             até 10 dias
           </motion.span>
@@ -52,8 +52,7 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          // Aumentei um pouco o max-w para acomodar bem as quebras manuais
-          className="max-w-[580px] text-[19px] font-[400] leading-relaxed"
+          className="max-w-[580px] text-[16px] font-[400] leading-7 sm:text-[18px] sm:leading-relaxed"
           style={{
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
             color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)",
@@ -66,12 +65,12 @@ export default function Hero() {
           e do design para que você possa focar no que faz de melhor.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <motion.div variants={item} className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
           <motion.a
             href="/precos"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center gap-3 rounded-full border border-[#2323FF] bg-[#2323FF] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98]"
+            className="group inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full border border-[#2323FF] bg-[#2323FF] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98] sm:w-auto"
           >
             <span>Solicitar orçamento</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#2323FF] transition-transform duration-200 ease-out group-hover:rotate-45">
@@ -79,12 +78,12 @@ export default function Hero() {
             </span>
           </motion.a>
           <motion.a
-            href="https://wa.me/5531985125005?text=Ol%C3%A1!%20Quero%20um%20site%20profissional%20para%20meu%20neg%C3%B3cio."
+            href="https://wa.me/5531989184698?text=Ol%C3%A1!%20Quero%20um%20site%20profissional%20para%20meu%20neg%C3%B3cio."
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center gap-3 rounded-full border border-green-700 bg-green-700 py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-green-800 hover:bg-green-800 active:translate-y-0 active:scale-[0.98]"
+            className="group inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full border border-green-700 bg-green-700 py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-green-800 hover:bg-green-800 active:translate-y-0 active:scale-[0.98] sm:w-auto"
           >
             <span>Falar direto comigo</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-green-700">
@@ -101,15 +100,15 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm"
+          className="grid w-full max-w-[620px] grid-cols-1 gap-2 text-sm sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2"
           style={{ color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)" }}
         >
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-1.5 rounded-xl border border-black/5 bg-white/50 px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]">
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
             98% de satisfação
           </span>
-          <span>46 projetos entregues</span>
-          <span>15% dos clientes vêm por indicação</span>
+          <span className="rounded-xl border border-black/5 bg-white/50 px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]">46 projetos entregues</span>
+          <span className="rounded-xl border border-black/5 bg-white/50 px-3 py-2 dark:border-white/10 dark:bg-white/[0.03]">15% dos clientes vêm por indicação</span>
         </motion.div>
       </motion.div>
 

@@ -10,11 +10,11 @@ export default function PortraitComposition() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.3 }}
-      className="relative mx-auto h-[560px] w-full max-w-[640px] sm:h-[680px]"
+      className="relative mx-auto h-[450px] w-full max-w-[640px] sm:h-[560px] md:h-[680px]"
     >
       {/* Soft shape backdrop */}
       <motion.div
-        className="absolute z-0 [background:linear-gradient(160deg,#f5f7ff_0%,#e0e7ff_45%,#c7d2fe_100%)] [box-shadow:inset_0_0_40px_rgba(35,35,255,0.05)] dark:[background:linear-gradient(160deg,#0b1024_0%,#121936_45%,#1a2350_100%)] dark:[box-shadow:inset_0_0_40px_rgba(35,35,255,0.2)]"
+        className="absolute bottom-14 left-[4%] right-[4%] top-4 z-0 [background:linear-gradient(160deg,#f5f7ff_0%,#e0e7ff_45%,#c7d2fe_100%)] [box-shadow:inset_0_0_40px_rgba(35,35,255,0.05)] dark:[background:linear-gradient(160deg,#0b1024_0%,#121936_45%,#1a2350_100%)] dark:[box-shadow:inset_0_0_40px_rgba(35,35,255,0.2)] sm:bottom-10 sm:top-3"
         animate={{
           borderRadius: [
             "60% 40% 30% 70% / 60% 30% 70% 40%",
@@ -23,12 +23,6 @@ export default function PortraitComposition() {
           ]
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          top: 10,
-          bottom: 40,
-          left: "4%",
-          right: "4%",
-        }}
       />
 
       {/* Decorative dotted arc */}
@@ -44,7 +38,7 @@ export default function PortraitComposition() {
       </svg>
 
       {/* Main portrait */}
-      <div className="absolute inset-x-0 bottom-2.5 top-0 z-[2] flex items-end justify-center">
+      <div className="absolute inset-x-0 bottom-7 top-0 z-[2] flex items-end justify-center sm:bottom-2.5">
         <Image
           src="/images/minha-foto.svg"
           alt="Foto do desenvolvedor de braços cruzados"
@@ -60,11 +54,11 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[4%] top-10 z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black"
+        className="absolute left-[3%] top-6 z-[4] rounded-2xl bg-white px-2.5 py-2 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black sm:left-[4%] sm:top-10 sm:px-3.5 sm:py-2.5"
       >
         <div className="flex items-center gap-2.5">
           {/* Caixa de entrega atualizada com Lucide React */}
-          <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#2323FF]/10 sm:h-9 sm:w-9">
             <Package className="h-4 w-4 text-[#2323FF]" strokeWidth={2.5} />
           </div>
           <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
@@ -82,7 +76,7 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute right-[2%] top-[90px] z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black"
+        className="absolute right-[2%] top-[70px] z-[4] rounded-2xl bg-white px-2.5 py-2 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black sm:top-[90px] sm:px-3.5 sm:py-2.5"
       >
         <div
           className="flex items-center gap-2"
@@ -154,7 +148,7 @@ export default function PortraitComposition() {
       </motion.div>
 
       {/* Signature card (bottom) */}
-      <div className="absolute inset-x-[6%] bottom-0 z-[4] flex items-center justify-between gap-3.5 rounded-2xl bg-white px-4 py-3.5 shadow-[0_24px_48px_-14px_rgba(20,15,60,0.22),0_6px_18px_-6px_rgba(20,15,60,0.08)] dark:bg-black">
+      <div className="absolute inset-x-[4%] bottom-0 z-[4] flex flex-col items-start gap-2.5 rounded-2xl bg-white px-3.5 py-3 shadow-[0_24px_48px_-14px_rgba(20,15,60,0.22),0_6px_18px_-6px_rgba(20,15,60,0.08)] dark:bg-black sm:inset-x-[6%] sm:flex-row sm:items-center sm:justify-between sm:gap-3.5 sm:px-4 sm:py-3.5">
         <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
           <div className="mb-1 inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.18)]" />
@@ -167,7 +161,7 @@ export default function PortraitComposition() {
             Atendimento direto comigo, sem intermediários
           </div>
         </div>
-        <div className="inline-flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-full bg-[#2323FF] text-white">
+        <div className="inline-flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center self-end rounded-full bg-[#2323FF] text-white sm:h-[42px] sm:w-[42px] sm:self-auto">
           <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
         </div>
       </div>

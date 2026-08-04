@@ -3,7 +3,7 @@ import Hero from "@/components/sections/Hero";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-white text-[#0a0a0f]">
+    <main className="relative min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       {/* Background wash */}
       <div
         aria-hidden

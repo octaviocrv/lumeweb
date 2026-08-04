@@ -31,7 +31,7 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="text-4xl font-[700] leading-tight text-[#0a0a0f] sm:text-5xl xl:text-6xl"
+          className="text-4xl font-[700] leading-tight text-[#0a0a0f] dark:text-white sm:text-5xl xl:text-6xl"
           style={{
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
           }}
@@ -52,14 +52,18 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="max-w-md text-[19px] font-[400] leading-relaxed"
+          // Aumentei um pouco o max-w para acomodar bem as quebras manuais
+          className="max-w-[580px] text-[19px] font-[400] leading-relaxed"
           style={{
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
             color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)",
           }}
         >
-          A partir de R$ 147/mês no plano anual, com hospedagem, manutenção e
-          suporte inclusos. Você só paga quando o projeto inicia.
+          Fuja dos modelos genéricos e tenha um espaço pensado
+          <br className="hidden md:block" />
+          exclusivamente para o seu negócio. Cuido da execução técnica
+          <br className="hidden md:block" />
+          e do design para que você possa focar no que faz de melhor.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -69,7 +73,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             className="group inline-flex items-center gap-3 rounded-full border border-[#2323FF] bg-[#2323FF] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98]"
           >
-            <span>Ver planos e preços</span>
+            <span>Solicitar orçamento</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#2323FF] transition-transform duration-200 ease-out group-hover:rotate-45">
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </span>
@@ -82,7 +86,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             className="group inline-flex items-center gap-3 rounded-full border border-green-700 bg-green-700 py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-green-800 hover:bg-green-800 active:translate-y-0 active:scale-[0.98]"
           >
-            <span>Chamar no WhatsApp</span>
+            <span>Falar direto comigo</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-green-700">
               <svg
                 viewBox="0 0 24 24"
@@ -104,8 +108,8 @@ export default function Hero() {
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
             98% de satisfação
           </span>
-          <span>97 projetos entregues</span>
-          <span>45% dos clientes vêm por indicação</span>
+          <span>46 projetos entregues</span>
+          <span>15% dos clientes vêm por indicação</span>
         </motion.div>
       </motion.div>
 

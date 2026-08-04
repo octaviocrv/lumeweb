@@ -13,9 +13,8 @@ export default function PortraitComposition() {
       className="relative mx-auto h-[560px] w-full max-w-[640px] sm:h-[680px]"
     >
       {/* Soft shape backdrop */}
-{/* Soft shape backdrop */}
       <motion.div
-        className="absolute z-0"
+        className="absolute z-0 [background:linear-gradient(160deg,#f5f7ff_0%,#e0e7ff_45%,#c7d2fe_100%)] [box-shadow:inset_0_0_40px_rgba(35,35,255,0.05)] dark:[background:linear-gradient(160deg,#0b1024_0%,#121936_45%,#1a2350_100%)] dark:[box-shadow:inset_0_0_40px_rgba(35,35,255,0.2)]"
         animate={{
           borderRadius: [
             "60% 40% 30% 70% / 60% 30% 70% 40%",
@@ -29,10 +28,6 @@ export default function PortraitComposition() {
           bottom: 40,
           left: "4%",
           right: "4%",
-          // Gradiente azul suave, perfeitamente alinhado com a paleta #2323FF
-          background: "linear-gradient(160deg, #f5f7ff 0%, #e0e7ff 45%, #c7d2fe 100%)",
-          // Uma sombra interna muito sutil para dar profundidade à bolha
-          boxShadow: "inset 0 0 40px rgba(35,35,255,0.05)"
         }}
       />
 
@@ -65,7 +60,7 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[4%] top-10 z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)]"
+        className="absolute left-[4%] top-10 z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black"
       >
         <div className="flex items-center gap-2.5">
           {/* Caixa de entrega atualizada com Lucide React */}
@@ -73,10 +68,10 @@ export default function PortraitComposition() {
             <Package className="h-4 w-4 text-[#2323FF]" strokeWidth={2.5} />
           </div>
           <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
+            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76] dark:text-[#8f8f9a]">
               Entrega
             </div>
-            <div className="text-[13px] font-medium text-[#0a0a0f]">
+            <div className="text-[13px] font-medium text-[#0a0a0f] dark:text-white">
               Pronto em 10 dias
             </div>
           </div>
@@ -87,7 +82,7 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute right-[2%] top-[90px] z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)]"
+        className="absolute right-[2%] top-[90px] z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black"
       >
         <div
           className="flex items-center gap-2"
@@ -106,10 +101,10 @@ export default function PortraitComposition() {
               </svg>
             ))}
           </div>
-          <div className="text-[13px] font-bold text-[#0a0a0f]">5.0</div>
+          <div className="text-[13px] font-bold text-[#0a0a0f] dark:text-white">5.0</div>
         </div>
         <div
-          className="mt-0.5 text-[10px] text-[#6b6b76]"
+          className="mt-0.5 text-[10px] text-[#6b6b76] dark:text-[#8f8f9a]"
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           Avaliação dos clientes
@@ -120,17 +115,17 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="absolute left-[2%] top-[40%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] sm:block"
+        className="absolute left-[2%] top-[40%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black sm:block"
       >
         <div className="flex items-center gap-2.5">
           <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
             <Zap className="h-4 w-4 text-[#2323FF]" fill="#2323FF" fillOpacity={0.2} />
           </div>
           <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
+            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76] dark:text-[#8f8f9a]">
               Performance
             </div>
-            <div className="text-[13px] font-medium text-[#0a0a0f]">
+            <div className="text-[13px] font-medium text-[#0a0a0f] dark:text-white">
               Carregamento Rápido
             </div>
           </div>
@@ -141,17 +136,17 @@ export default function PortraitComposition() {
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
-        className="absolute right-[0%] top-[52%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] sm:block"
+        className="absolute right-[0%] top-[52%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] dark:bg-black sm:block"
       >
         <div className="flex items-center gap-2.5">
           <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
             <TrendingUp className="h-4 w-4 text-[#2323FF]" strokeWidth={2.5} />
           </div>
           <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
-            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
+            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76] dark:text-[#8f8f9a]">
               Estratégia
             </div>
-            <div className="text-[13px] font-medium text-[#0a0a0f]">
+            <div className="text-[13px] font-medium text-[#0a0a0f] dark:text-white">
               Foco em Conversão
             </div>
           </div>
@@ -159,16 +154,16 @@ export default function PortraitComposition() {
       </motion.div>
 
       {/* Signature card (bottom) */}
-      <div className="absolute inset-x-[6%] bottom-0 z-[4] flex items-center justify-between gap-3.5 rounded-2xl bg-white px-4 py-3.5 shadow-[0_24px_48px_-14px_rgba(20,15,60,0.22),0_6px_18px_-6px_rgba(20,15,60,0.08)]">
+      <div className="absolute inset-x-[6%] bottom-0 z-[4] flex items-center justify-between gap-3.5 rounded-2xl bg-white px-4 py-3.5 shadow-[0_24px_48px_-14px_rgba(20,15,60,0.22),0_6px_18px_-6px_rgba(20,15,60,0.08)] dark:bg-black">
         <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
           <div className="mb-1 inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.18)]" />
             Atendendo novos clientes
           </div>
-          <div className="text-[15px] font-bold tracking-tight text-[#0a0a0f]">
+          <div className="text-[15px] font-bold tracking-tight text-[#0a0a0f] dark:text-white">
             Vamos criar o site do seu negócio 👋
           </div>
-          <div className="text-xs text-[#6b6b76]">
+          <div className="text-xs text-[#6b6b76] dark:text-[#8f8f9a]">
             Atendimento direto comigo, sem intermediários
           </div>
         </div>

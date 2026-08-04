@@ -14,6 +14,14 @@
   --border: #ececf2;
 }
 
+html.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --color-dark_black: #ffffff;
+  --muted: #8f8f9a;
+  --border: #2a2a33;
+}
+
 html,
 body {
   padding: 0;

@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Moon } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import BrandSymbol from "@/components/ui/BrandSymbol";
 
 const navItems = [
@@ -13,6 +14,26 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+    const shouldUseDark = savedTheme === "dark" || (savedTheme === null && root.classList.contains("dark"));
+
+    root.classList.toggle("dark", shouldUseDark);
+    setIsDark(shouldUseDark);
+  }, []);
+
+  function handleThemeToggle() {
+    const root = document.documentElement;
+    const nextIsDark = !isDark;
+
+    root.classList.toggle("dark", nextIsDark);
+    localStorage.setItem("theme", nextIsDark ? "dark" : "light");
+    setIsDark(nextIsDark);
+  }
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -26,7 +47,7 @@ export default function Header() {
           <BrandSymbol className="h-[70px] w-[70px]" />
         </div>
         <span
-          className="-ml-2 text-[22px] font-semibold tracking-tight"
+          className="-ml-2 text-[22px] font-semibold tracking-tight text-[#0a0a0f] dark:text-white"
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           lume.web
@@ -35,14 +56,14 @@ export default function Header() {
 
       {/* Nav */}
       <nav
-        className="hidden items-center gap-1 rounded-full bg-[#f4f4f6] p-1.5 md:flex"
+        className="hidden items-center gap-1 rounded-full bg-[#f4f4f6] p-1.5 dark:bg-[#16171f] md:flex"
         style={{ fontFamily: "var(--font-poppins), sans-serif" }}
       >
         {navItems.map((item) => (
           <a
             key={item.href}
             href={item.href}
-            className="rounded-full px-5 py-2.5 text-[15px] font-medium text-[#1b1d1e99] transition-[background-color,color,box-shadow] duration-200 hover:bg-[#fafafc] hover:text-[#0a0a0f] hover:shadow-[0_0_18px_-8px_rgba(0,0,0,0.28)]"
+            className="rounded-full px-5 py-2.5 text-[15px] font-medium text-[#1b1d1e99] transition-[background-color,color,box-shadow] duration-200 hover:bg-[#fafafc] hover:text-[#0a0a0f] hover:shadow-[0_0_18px_-8px_rgba(0,0,0,0.28)] dark:text-[#a0a3b5] dark:hover:bg-[#202232] dark:hover:text-white dark:hover:shadow-[0_0_18px_-8px_rgba(0,0,0,0.45)]"
           >
             {item.label}
           </a>
@@ -61,9 +82,10 @@ export default function Header() {
         </motion.button>
         <button
           aria-label="Alternar tema"
-          className="flex h-11 w-11 items-center justify-center rounded-full text-[#0a0a0f] transition-colors hover:bg-[#f4f4f6]"
+          onClick={handleThemeToggle}
+          className="flex h-11 w-11 items-center justify-center rounded-full text-[#0a0a0f] transition-colors hover:bg-[#f4f4f6] dark:text-white dark:hover:bg-[#1b1c25]"
         >
-          <Moon className="h-5 w-5" />
+          {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </button>
       </div>
     </motion.header>

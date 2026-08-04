@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     // Adicionamos os caminhos com 'src/' caso seu projeto use essa estrutura
     "./src/**/*.{ts,tsx}",

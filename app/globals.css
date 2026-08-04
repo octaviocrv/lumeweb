@@ -5,7 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0f;
-  --brand: #4f39f6;
+  --color-dark_black: #0a0a0f;
+  --brand: #2323FF;
   --brand-dark: #3d28e0;
   --whatsapp: #16a34a;
   --whatsapp-dark: #15803d;

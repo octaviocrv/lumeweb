@@ -36,13 +36,15 @@ export default function Hero() {
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
           }}
         >
-          Seu site profissional no ar em{" "}
+          Seu site profissional
+          <br />
+          no ar em{" "}
           <motion.span
             initial={{ scaleX: 0, opacity: 0 }}
             animate={{ scaleX: 1, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             style={{ transformOrigin: "left" }}
-            className="box-decoration-clone inline-block rounded-2xl bg-[#4f39f6] px-3 py-0.5 text-white"
+            className="box-decoration-clone inline-block rounded-2xl bg-[#2323FF] px-3 py-0.5 text-white"
           >
             até 10 dias
           </motion.span>
@@ -50,9 +52,10 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="max-w-md text-[19px] font-[400] leading-relaxed text-[#7a7a86]"
+          className="max-w-md text-[19px] font-[400] leading-relaxed"
           style={{
             fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
+            color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)",
           }}
         >
           A partir de R$ 147/mês no plano anual, com hospedagem, manutenção e
@@ -64,10 +67,10 @@ export default function Hero() {
             href="/precos"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group inline-flex items-center gap-3 rounded-full border border-[#4f39f6] bg-[#4f39f6] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98]"
+            className="group inline-flex items-center gap-3 rounded-full border border-[#2323FF] bg-[#2323FF] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98]"
           >
             <span>Ver planos e preços</span>
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#4f39f6] transition-transform duration-200 ease-out group-hover:rotate-45">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#2323FF] transition-transform duration-200 ease-out group-hover:rotate-45">
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </span>
           </motion.a>
@@ -94,7 +97,8 @@ export default function Hero() {
 
         <motion.div
           variants={item}
-          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#7a7a86]"
+          className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm"
+          style={{ color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)" }}
         >
           <span className="flex items-center gap-1.5">
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />

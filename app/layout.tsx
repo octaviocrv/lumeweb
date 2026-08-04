@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Inter_Tight } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 
@@ -21,8 +22,15 @@ const interTight = Inter_Tight({
   variable: "--font-inter-tight",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "LUME WEB — Sites profissionais em até 10 dias",
+  title: "Criação de Sites Profissionais | Pronto em 5-10 Dias - Lume | Lume Web",
   description:
     "Desenvolvimento de sites sob medida com Next.js. Do briefing ao domínio configurado em até 10 dias.",
 };
@@ -33,7 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${satoshi.variable} ${interTight.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${satoshi.variable} ${interTight.variable} ${poppins.variable}`}
+    >
       <body className="font-sans antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>

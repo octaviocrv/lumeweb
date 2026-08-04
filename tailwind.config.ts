@@ -2,6 +2,8 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
+    // Adicionamos os caminhos com 'src/' caso seu projeto use essa estrutura
+    "./src/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./pages/**/*.{ts,tsx}",
@@ -14,7 +16,7 @@ const config: Config = {
       },
       colors: {
         brand: {
-          DEFAULT: "#4f39f6",
+          DEFAULT: "#2323FF",
           dark: "#3d28e0",
         },
         whatsapp: {

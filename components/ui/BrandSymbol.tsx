@@ -7,7 +7,7 @@ type BrandSymbolProps = {
 export default function BrandSymbol({ className }: BrandSymbolProps) {
   return (
     <Image
-      src="/brand/logo-lume-fundo-branco.svg"
+      src="/brand/logo-lume-azul-sem-fundo.svg"
       alt="Logo LUME"
       width={120}
       height={120}

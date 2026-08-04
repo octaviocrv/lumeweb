@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
+import WorkSection from "@/components/sections/WorkSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Header />
         <div aria-hidden className="h-[104px]" />
         <Hero />
+        <WorkSection />
       </div>
     </main>
   );

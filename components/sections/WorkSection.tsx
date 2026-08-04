@@ -138,7 +138,7 @@ export default function WorkSection() {
                 color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)",
               }}
             >
-              Sites que desenvolvemos e mantemos para clientes reais. Visite e comprove.
+              Sites desenvoldidos para clientes reais. Visite e comprove.
             </p>
           </motion.div>
 

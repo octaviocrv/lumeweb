@@ -155,7 +155,7 @@ export default function PortraitComposition() {
             Atendendo novos clientes
           </div>
           <div className="text-[15px] font-bold tracking-tight text-[#0a0a0f] dark:text-white">
-            Vamos criar o site do seu negócio 👋
+            Vamos criar o site do seu negócio
           </div>
           <div className="text-xs text-[#6b6b76] dark:text-[#8f8f9a]">
             Atendimento direto comigo, sem intermediários

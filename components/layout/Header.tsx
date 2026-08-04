@@ -6,11 +6,12 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import BrandSymbol from "@/components/ui/BrandSymbol";
 
 const navItems = [
-  { label: "Processo", href: "#processo" },
-  { label: "Trabalhos", href: "#trabalhos" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Preços", href: "#precos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Sobre mim", href: "#sobre" },
+  { label: "Projetos", href: "#trabalhos" },
+  {
+    label: "Contato",
+    href: "https://wa.me/5531989184698?text=Ol%C3%A1!%20Quero%20um%20site%20profissional%20para%20meu%20neg%C3%B3cio.",
+  },
 ];
 
 export default function Header() {
@@ -174,6 +175,7 @@ export default function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
+          {/*
           <motion.button
             whileHover={{ y: -1 }}
             whileTap={{ scale: 0.97 }}
@@ -182,6 +184,7 @@ export default function Header() {
           >
             Ver planos
           </motion.button>
+          */}
           <button
             aria-label="Alternar tema"
             onClick={handleThemeToggle}
@@ -221,6 +224,7 @@ export default function Header() {
                   </a>
                 ))}
               </nav>
+              {/*
               <motion.button
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
@@ -228,6 +232,7 @@ export default function Header() {
               >
                 Ver planos
               </motion.button>
+              */}
             </motion.div>
           )}
         </AnimatePresence>

@@ -15,6 +15,7 @@ export default function HomePage() {
       />
       <div className="relative z-10">
         <Header />
+        <div aria-hidden className="h-[104px]" />
         <Hero />
       </div>
     </main>

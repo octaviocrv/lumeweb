@@ -16,6 +16,7 @@ const config: Config = {
         serif: ["Georgia", "serif"],
       },
       colors: {
+        dark_black: "#16171f",
         brand: {
           DEFAULT: "#2323FF",
           dark: "#3d28e0",

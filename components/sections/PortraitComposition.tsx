@@ -13,16 +13,26 @@ export default function PortraitComposition() {
       className="relative mx-auto h-[560px] w-full max-w-[640px] sm:h-[680px]"
     >
       {/* Soft shape backdrop */}
-      <div
+{/* Soft shape backdrop */}
+      <motion.div
         className="absolute z-0"
+        animate={{
+          borderRadius: [
+            "60% 40% 30% 70% / 60% 30% 70% 40%",
+            "40% 60% 70% 30% / 40% 60% 40% 60%",
+            "60% 40% 30% 70% / 60% 30% 70% 40%"
+          ]
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         style={{
           top: 10,
           bottom: 40,
           left: "4%",
           right: "4%",
-          background:
-            "linear-gradient(160deg, #ede9fe 0%, #ddd6fe 45%, #fbcfe8 100%)",
-          borderRadius: "40% 40% 44% 44% / 46% 46% 40% 40%",
+          // Gradiente azul suave, perfeitamente alinhado com a paleta #2323FF
+          background: "linear-gradient(160deg, #f5f7ff 0%, #e0e7ff 45%, #c7d2fe 100%)",
+          // Uma sombra interna muito sutil para dar profundidade à bolha
+          boxShadow: "inset 0 0 40px rgba(35,35,255,0.05)"
         }}
       />
 

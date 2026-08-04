@@ -62,11 +62,11 @@ const projects: Project[] = [
     alt: "Projeto IndexMed",
   },
   {
-    title: "LokGeo",
-    subtitle: "Landing Page · Locação",
-    href: "https://lokgeo.vercel.app/",
-    image: "/projetos/SiteLokGeo.png",
-    alt: "Projeto LokGeo",
+    title: "Casa Junno",
+    subtitle: "Site Institucional · Moda",
+    href: "https://casajunnoo.com.br/",
+    image: "/projetos/SiteModaCasaJunno.png",
+    alt: "Projeto Casa Junno",
   },
   {
     title: "Nerus",
@@ -76,11 +76,11 @@ const projects: Project[] = [
     alt: "Projeto Nerus",
   },
   {
-    title: "Casa Junno",
-    subtitle: "Site Institucional · Moda",
-    href: "https://casajunnoo.com.br/",
-    image: "/projetos/SiteModaCasaJunno.png",
-    alt: "Projeto Casa Junno",
+    title: "LokGeo",
+    subtitle: "Landing Page · Locação",
+    href: "https://lokgeo.vercel.app/",
+    image: "/projetos/SiteLokGeo.png",
+    alt: "Projeto LokGeo",
   },
   {
     title: "Casa Vento",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Zap, TrendingUp, Package } from "lucide-react";
 
 export default function PortraitComposition() {
   return (
@@ -51,21 +51,16 @@ export default function PortraitComposition() {
         />
       </div>
 
-      {/* Floating chip: entrega (top-left) */}
+      {/* Floating chip 1: Entrega (top-left) */}
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         className="absolute left-[4%] top-10 z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)]"
       >
         <div className="flex items-center gap-2.5">
-          <div className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-[10px] bg-transparent">
-            <Image
-              src="/brand/caixa.png"
-              alt="Logo Lume"
-              width={36}
-              height={36}
-              className="h-full w-full object-contain"
-            />
+          {/* Caixa de entrega atualizada com Lucide React */}
+          <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
+            <Package className="h-4 w-4 text-[#2323FF]" strokeWidth={2.5} />
           </div>
           <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
             <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
@@ -78,10 +73,10 @@ export default function PortraitComposition() {
         </div>
       </motion.div>
 
-      {/* Floating chip: rating (top-right) */}
+      {/* Floating chip 2: Rating (top-right) */}
       <motion.div
         animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         className="absolute right-[2%] top-[90px] z-[4] rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)]"
       >
         <div
@@ -108,6 +103,48 @@ export default function PortraitComposition() {
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           Avaliação dos clientes
+        </div>
+      </motion.div>
+
+      {/* Floating chip 3: Performance (middle-left) */}
+      <motion.div
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute left-[2%] top-[40%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] sm:block"
+      >
+        <div className="flex items-center gap-2.5">
+          <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
+            <Zap className="h-4 w-4 text-[#2323FF]" fill="#2323FF" fillOpacity={0.2} />
+          </div>
+          <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
+            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
+              Performance
+            </div>
+            <div className="text-[13px] font-medium text-[#0a0a0f]">
+              Carregamento Rápido
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Floating chip 4: Conversão (middle-right) */}
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2.2 }}
+        className="absolute right-[0%] top-[52%] z-[4] hidden rounded-2xl bg-white px-3.5 py-2.5 shadow-[0_14px_30px_-10px_rgba(20,15,60,0.18),0_4px_10px_-4px_rgba(20,15,60,0.08)] sm:block"
+      >
+        <div className="flex items-center gap-2.5">
+          <div className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#2323FF]/10">
+            <TrendingUp className="h-4 w-4 text-[#2323FF]" strokeWidth={2.5} />
+          </div>
+          <div style={{ fontFamily: "var(--font-poppins), sans-serif" }}>
+            <div className="mb-0.5 text-[10px] uppercase tracking-[0.08em] text-[#6b6b76]">
+              Estratégia
+            </div>
+            <div className="text-[13px] font-medium text-[#0a0a0f]">
+              Foco em Conversão
+            </div>
+          </div>
         </div>
       </motion.div>
 

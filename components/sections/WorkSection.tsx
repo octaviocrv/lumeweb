@@ -129,7 +129,7 @@ export default function WorkSection() {
                 fontFamily: "var(--font-satoshi), var(--font-inter-tight), sans-serif",
               }}
             >
-              Projetos reais, no ar agora
+              Trabalhos reais, no ar agora
             </h2>
             <p
               className="mt-4 text-[16px] font-[400] leading-7 sm:text-[18px] sm:leading-relaxed md:whitespace-nowrap"

@@ -67,7 +67,7 @@ export default function Hero() {
 
         <motion.div variants={item} className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
           <motion.a
-            href="/precos"
+            href="#planos"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="group inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full border border-[#2323FF] bg-[#2323FF] py-2 pl-5 pr-2 font-medium text-white transition-all duration-200 ease-out hover:-translate-y-px hover:border-[#3a1ed0] hover:bg-[#3a1ed0] active:translate-y-0 active:scale-[0.98] sm:w-auto"

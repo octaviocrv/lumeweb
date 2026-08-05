@@ -7,7 +7,9 @@ import BrandSymbol from "@/components/ui/BrandSymbol";
 
 const navItems = [
   { label: "Sobre mim", href: "#sobre" },
-  { label: "Projetos", href: "#trabalhos" },
+  { label: "Trabalho", href: "#trabalhos" },
+  { label: "Abordagem", href: "#processo" },
+  { label: "Valores", href: "#planos" },
   {
     label: "Contato",
     href: "https://wa.me/5531989184698?text=Ol%C3%A1!%20Quero%20um%20site%20profissional%20para%20meu%20neg%C3%B3cio.",

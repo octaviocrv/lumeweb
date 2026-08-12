@@ -74,7 +74,7 @@ const card =
 const badges = [
   { icon: BadgeCheck, label: "Sem mensalidade obrigatória", accent: "emerald" },
   { icon: ShieldCheck, label: "Pagamento único · O site é seu", accent: "brand" },
-  { icon: Zap, label: "Pix com 10% de desconto", accent: "brand" },
+  // { icon: Zap, label: "Pix com 10% de desconto", accent: "brand" },
 ] as const;
 
 const values: { icon: LucideIcon; title: string; text: string }[] = [
@@ -199,9 +199,9 @@ const steps: {
 type Plan = {
   name: string;
   price: string;
-  installments: string;
+  installments?: string;
   ideal: string;
-  features: string[];
+  features: { text: string; emphasized?: boolean }[];
   cta: string;
   message: string;
   icon: LucideIcon;
@@ -213,19 +213,20 @@ const plans: Plan[] = [
   {
     name: "Essencial",
     price: "R$ 497",
-    installments: "Em até 6x de R$ 89 · Pix com 10% de desconto",
-    ideal: "Autônomo, profissional liberal ou quem precisa marcar presença online de forma simples.",
+    // installments: "Em até 6x de R$ 89 · Pix com 10% de desconto",
+    ideal: "Pra quem quer só um site simples pra começar a existir na internet.",
     icon: Zap,
     features: [
-      "Landing page de 1 página (até 5 seções)",
-      "Design personalizado, feito sob medida",
-      "Adaptado para celular, tablet e computador",
-      "Botão de WhatsApp + formulário de contato",
-      "Integração com Instagram e Google Maps",
-      "Otimização básica para aparecer no Google",
-      "Entrega em até 5 dias",
-      "Até 3 rodadas de alterações antes de publicar",
-      "Pagamento único. O site é seu pra sempre",
+      { text: "Landing page de 1 página baseada em modelo profissional" },
+      { text: "Personalizado com sua marca, cores e logo" },
+      { text: "Conteúdo modelo pronto pra sua área (sem precisar mandar nada)", emphasized: true },
+      { text: "Adaptado para celular, tablet e computador", emphasized: true },
+      { text: "Botão de WhatsApp" },
+      { text: "Links pro seu Instagram e Google Maps", emphasized: true },
+      { text: "SEO básico configurado" },
+      { text: "Entrega em até 5 dias" },
+      { text: "1 rodada de alterações antes de publicar" },
+      { text: "Suporte de 7 dias após publicação" },
     ],
     cta: "Quero o Essencial",
     message: "Ola!%20Quero%20o%20plano%20Essencial%20(R%24%20497).",
@@ -233,21 +234,24 @@ const plans: Plan[] = [
   {
     name: "Profissional",
     price: "R$ 897",
-    installments: "Em até 10x de R$ 89 · Pix com 10% de desconto",
-    ideal: "Clínicas, lojas, restaurantes e prestadores de serviço que querem se destacar e conquistar mais clientes.",
+    // installments: "Em até 10x de R$ 89 · Pix com 10% de desconto",
+    ideal: "Pra quem quer um site sob medida que trabalha pra atrair cliente todo dia.",
     icon: Sparkles,
     highlight: true,
-    tag: "Mais escolhido",
+    tag: "⭐ Mais escolhido",
     features: [
-      "Site completo até 4 páginas (Home, Sobre, Serviços, Contato)",
-      "Design 100% sob medida",
-      "Adaptado para todos os dispositivos",
-      "Integração WhatsApp, Instagram, Google Maps e Analytics",
-      "Otimização para aparecer no Google (SEO)",
-      "Copywriting revisado por mim",
-      "Entrega em até 10 dias",
-      "Até 3 rodadas de alterações antes de publicar",
-      "Pagamento único. O site é seu pra sempre",
+      { text: "Site sob medida, feito do zero pro seu negócio (até 4 páginas)" },
+      { text: "Design 100% personalizado, pensado pra sua área" },
+      { text: "Copywriting escrito por mim, focado em converter visitas em contato" },
+      { text: "Orientação de fotos ou uso das suas" },
+      { text: "Adaptado para todos os dispositivos" },
+      { text: "Botão flutuante de WhatsApp em todas as páginas" },
+      { text: "Mapa do Google embutido + link do Instagram", emphasized: true },
+      { text: "Google Analytics configurado" },
+      { text: "SEO on-page otimizado" },
+      { text: "Entrega em até 10 dias" },
+      { text: "Até 3 rodadas de alterações antes de publicar" },
+      { text: "Suporte de 30 dias após publicação" },
     ],
     cta: "Quero o Profissional",
     message: "Ola!%20Quero%20o%20plano%20Profissional%20(R%24%20897).",
@@ -255,18 +259,22 @@ const plans: Plan[] = [
   {
     name: "Completo",
     price: "R$ 1.497",
-    installments: "Em até 12x de R$ 125 · Pix com 10% de desconto",
-    ideal: "Empresas que querem virar referência no segmento e ter um site robusto, pronto pra crescer.",
+    // installments: "Em até 12x de R$ 125 · Pix com 10% de desconto",
+    ideal: "Pra empresas que querem virar referência e ter um site pronto pra escalar com anúncios.",
     icon: Crown,
     features: [
-      "Site até 8 páginas + blog opcional",
-      "Design premium com animações sutis",
-      "SEO otimizado e configuração avançada",
-      "Integrações completas (WhatsApp, Instagram, Analytics, Meta Pixel)",
-      "Copywriting estratégico incluso",
-      "Entrega em até 15 dias",
-      "Até 3 rodadas de alterações antes de publicar",
-      "Pagamento único. O site é seu pra sempre",
+      { text: "Tudo do Profissional, com até 8 páginas + blog" },
+      { text: "3 posts de blog iniciais escritos (base de SEO)" },
+      { text: "Google Meu Negócio otimizado (perfil, fotos, categorias)" },
+      { text: "Meta Pixel instalado (site pronto pra rodar anúncios no Instagram e Facebook)" },
+      { text: "Copywriting estratégico ampliado pra todas as páginas" },
+      {
+        text: "Revisão estratégica em 60 dias (call de 30 min pra ajustar o que não tá convertendo)",
+        emphasized: true,
+      },
+      { text: "Entrega em até 15 dias" },
+      { text: "Até 3 rodadas de alterações antes de publicar" },
+      { text: "Suporte de 30 dias após publicação" },
     ],
     cta: "Quero o Completo",
     message: "Ola!%20Quero%20o%20plano%20Completo%20(R%24%201.497).",
@@ -1118,15 +1126,14 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
         >
           {plan.price}
         </div>
-        <p className="mt-2 text-[13px] leading-5" style={{ ...micro, ...muted }}>
-          {plan.installments}
-        </p>
+        {plan.installments && (
+          <p className="mt-2 text-[13px] leading-5" style={{ ...micro, ...muted }}>
+            {plan.installments}
+          </p>
+        )}
       </div>
 
-      <p className="mt-5 text-sm leading-6" style={{ ...display, ...muted }}>
-        <strong className="font-semibold text-[#0a0a0f] dark:text-white">
-          Ideal para:
-        </strong>{" "}
+      <p className="mt-5 text-sm italic leading-6" style={{ ...display, ...muted }}>
         {plan.ideal}
       </p>
 
@@ -1138,11 +1145,14 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
           O que está incluso
         </p>
         <div className="flex flex-col gap-2.5">
-          {plan.features.map((feature) => (
-            <div key={feature} className="flex items-start gap-2">
+          {plan.features.map((feature, i) => (
+            <div key={`${plan.name}-${i}`} className="flex items-start gap-2">
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#2323FF]" strokeWidth={2.4} />
-              <span className="text-sm leading-6" style={{ ...display, ...muted }}>
-                {feature}
+              <span
+                className={`text-sm leading-6 ${feature.emphasized ? "font-semibold text-[#0a0a0f] dark:text-white" : ""}`}
+                style={feature.emphasized ? display : { ...display, ...muted }}
+              >
+                {feature.text}
               </span>
             </div>
           ))}

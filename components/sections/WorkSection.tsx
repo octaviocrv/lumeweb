@@ -7,8 +7,8 @@ type Project = {
   title: string;
   subtitle: string;
   href: string;
-  image: string;
-  alt: string;
+  image?: string;
+  alt?: string;
 };
 
 const projects: Project[] = [
@@ -96,6 +96,32 @@ const projects: Project[] = [
     image: "/projetos/SiteAcademia.png",
     alt: "Projeto Studio Up Fitness",
   },
+  {
+    title: "Bruno Pedroso",
+    subtitle: "Landing Page · Portfólio",
+    href: "https://eubrunopedroso.vercel.app/",
+    image: "/projetos/brunogoogle.png",
+    alt: "Projeto Bruno Pedroso",
+  },
+  {
+    title: "Filhos de Música",
+    subtitle: "Site Institucional · Música",
+    href: "https://filhos-de-musica.vercel.app/",
+    image: "/projetos/filhosdemusica.png",
+    alt: "Projeto Filhos de Musica",
+  },
+  {
+    title: "Takeosan",
+    subtitle: "Cardápio Digital · Restaurante",
+    href: "https://takeosan.menudino.com/",
+  },
+  {
+    title: "Multiverso Burguer",
+    subtitle: "Cardápio Online · Hamburgueria",
+    href: "https://multiversoburguer.netlify.app/",
+    image: "/projetos/multiversoburguer.png",
+    alt: "Projeto Multiverso Burguer",
+  },
 ];
 
 const fadeUp = {
@@ -163,9 +189,7 @@ export default function WorkSection() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const projectDomain = project.href
-    .replace(/^https?:\/\//, "")
-    .replace(/\/$/, "");
+  const projectDomain = project.href.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
   return (
     <a
@@ -181,13 +205,23 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f4f4f6] dark:bg-white/5">
-        <img
-          src={project.image}
-          alt={project.alt}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover:scale-[1.02]"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.alt ?? `Projeto ${project.title}`}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div className="absolute inset-0 p-4">
+            <div className="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-[#0a0a0f]/20 bg-white/50 px-3 text-center dark:border-white/20 dark:bg-white/5">
+              <span className="text-xs font-medium uppercase tracking-[0.12em] text-[#0a0a0f]/45 dark:text-white/45">
+                Espaço reservado para imagem
+              </span>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="p-5">

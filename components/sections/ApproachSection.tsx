@@ -35,6 +35,7 @@ import {
   TrendingUp,
   Wind,
   Wrench,
+  X,
   Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -201,7 +202,7 @@ type Plan = {
   price: string;
   installments?: string;
   ideal: string;
-  features: { text: string; emphasized?: boolean }[];
+  features: { text: string; emphasized?: boolean; included?: boolean }[];
   cta: string;
   message: string;
   icon: LucideIcon;
@@ -219,13 +220,16 @@ const plans: Plan[] = [
     features: [
       { text: "Landing page de 1 página baseada em modelo profissional" },
       { text: "Personalizado com sua marca, cores e logo" },
-      { text: "Conteúdo modelo pronto pra sua área (sem precisar mandar nada)", emphasized: true },
-      { text: "Adaptado para celular, tablet e computador", emphasized: true },
+      { text: "Conteúdo modelo pronto pra sua área (sem precisar mandar nada)" },
+      { text: "Adaptado para celular, tablet e computador" },
       { text: "Botão de WhatsApp" },
-      { text: "Links pro seu Instagram e Google Maps", emphasized: true },
+      { text: "Links pro seu Instagram e Google Maps" },
       { text: "SEO básico configurado" },
+      { text: "Site sob medida com até 4 páginas", included: false },
+      { text: "Google Analytics configurado", included: false },
       { text: "Entrega em até 5 dias" },
       { text: "1 rodada de alterações antes de publicar" },
+      { text: "Até 3 rodadas de alterações antes de publicar", included: false },
       { text: "Suporte de 7 dias após publicação" },
     ],
     cta: "Quero o Essencial",
@@ -240,18 +244,20 @@ const plans: Plan[] = [
     highlight: true,
     tag: "⭐ Mais escolhido",
     features: [
-      { text: "Site sob medida, feito do zero pro seu negócio (até 4 páginas)" },
-      { text: "Design 100% personalizado, pensado pra sua área" },
-      { text: "Copywriting escrito por mim, focado em converter visitas em contato" },
-      { text: "Orientação de fotos ou uso das suas" },
-      { text: "Adaptado para todos os dispositivos" },
-      { text: "Botão flutuante de WhatsApp em todas as páginas" },
+      { text: "Site sob medida, feito do zero pro seu negócio (até 4 páginas)", emphasized: true },
+      { text: "Design 100% personalizado, pensado pra sua área", emphasized: true },
+      { text: "Copywriting escrito por mim, focado em converter visitas em contato", emphasized: true },
+      { text: "Orientação de fotos ou uso das suas", emphasized: true },
+      { text: "Adaptado para todos os dispositivos", emphasized: true },
+      { text: "Botão flutuante de WhatsApp em todas as páginas", emphasized: true },
       { text: "Mapa do Google embutido + link do Instagram", emphasized: true },
-      { text: "Google Analytics configurado" },
-      { text: "SEO on-page otimizado" },
-      { text: "Entrega em até 10 dias" },
-      { text: "Até 3 rodadas de alterações antes de publicar" },
-      { text: "Suporte de 30 dias após publicação" },
+      { text: "Google Analytics configurado", emphasized: true },
+      { text: "SEO on-page otimizado", emphasized: true },
+      { text: "Entrega em até 10 dias", emphasized: true },
+      { text: "Até 3 rodadas de alterações antes de publicar", emphasized: true },
+      { text: "Suporte de 30 dias após publicação", emphasized: true },
+      { text: "Blog com posts iniciais de SEO", included: false },
+      { text: "Meta Pixel para campanhas pagas", included: false },
     ],
     cta: "Quero o Profissional",
     message: "Ola!%20Quero%20o%20plano%20Profissional%20(R%24%20897).",
@@ -717,7 +723,7 @@ export default function ApproachSection() {
               text="Você paga uma vez e o site é seu pra sempre."
             />
 
-            <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            <div className="mt-8 grid gap-5 lg:grid-cols-[1fr_1.1fr_1fr]">
               {plans.map((plan, i) => (
                 <PlanCard key={plan.name} plan={plan} index={i} />
               ))}
@@ -1092,15 +1098,15 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
       initial="hidden"
       whileInView="show"
       viewport={viewport}
-      className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 md:p-7 ${
+      className={`relative flex flex-col rounded-2xl border transition-all duration-300 ${
         plan.highlight
-          ? "border-[#2323FF] bg-white shadow-[0_24px_48px_-24px_rgba(73,40,253,0.45)] dark:bg-white/[0.06]"
-          : "border-[#0a0a0f]/10 bg-white/60 dark:border-white/10 dark:bg-white/[0.03]"
+          ? "z-10 border-[#2323FF] bg-white px-6 py-8 shadow-[0_30px_60px_-28px_rgba(73,40,253,0.56)] hover:scale-[1.01] md:-translate-y-5 md:px-7 md:py-9 md:hover:-translate-y-6 dark:bg-white/[0.06]"
+          : "border-[#0a0a0f]/10 bg-white/50 px-6 py-6 hover:-translate-y-0.5 md:px-7 md:py-7 dark:border-white/10 dark:bg-white/[0.025]"
       }`}
     >
       {plan.tag && (
         <span
-          className="absolute -top-3 left-6 rounded-full bg-[#2323FF] px-3 py-1 text-xs font-semibold text-white"
+          className="absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2323FF] px-4 py-1.5 text-[11px] font-bold tracking-[0.02em] text-white shadow-[0_10px_20px_-14px_rgba(35,35,255,0.65)]"
           style={micro}
         >
           {plan.tag}
@@ -1145,17 +1151,43 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
           O que está incluso
         </p>
         <div className="flex flex-col gap-2.5">
-          {plan.features.map((feature, i) => (
-            <div key={`${plan.name}-${i}`} className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#2323FF]" strokeWidth={2.4} />
-              <span
-                className={`text-sm leading-6 ${feature.emphasized ? "font-semibold text-[#0a0a0f] dark:text-white" : ""}`}
-                style={feature.emphasized ? display : { ...display, ...muted }}
-              >
-                {feature.text}
-              </span>
-            </div>
-          ))}
+          {plan.features.map((feature, i) => {
+            const included = feature.included !== false;
+            const isProfessionalFocus = plan.highlight && included;
+            const isCompleteIncluded = plan.name === "Completo" && included;
+            const useStrongText = isProfessionalFocus || feature.emphasized;
+
+            return (
+              <div key={`${plan.name}-${i}`} className="flex items-start gap-2">
+                <span
+                  className={`mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
+                    included
+                      ? "bg-[#2323FF]/10"
+                      : "bg-[#0a0a0f]/[0.06] text-[#0a0a0f]/45 dark:bg-white/10 dark:text-white/45"
+                  }`}
+                  aria-hidden
+                >
+                  {included ? (
+                    <Check className="h-3 w-3 text-[#2323FF]" strokeWidth={3} />
+                  ) : (
+                    <X className="h-3 w-3 text-[#0a0a0f]/55 dark:text-white/55" strokeWidth={2.4} />
+                  )}
+                </span>
+                <span
+                  className={`text-sm leading-6 ${
+                    useStrongText
+                      ? "font-semibold text-[#0a0a0f] dark:text-white"
+                      : isCompleteIncluded
+                        ? "text-[#0a0a0f]/85 dark:text-white/85"
+                        : ""
+                  } ${!included ? "line-through" : ""}`}
+                  style={useStrongText || isCompleteIncluded ? display : { ...display, ...muted }}
+                >
+                  {feature.text}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -1166,13 +1198,15 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
         className={`group mt-7 inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full py-2 pl-5 pr-2 font-medium transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-0 active:scale-[0.98] ${
           plan.highlight
             ? "bg-[#2323FF] text-white hover:bg-[#3a1ed0]"
-            : "border border-[#0a0a0f]/15 text-[#0a0a0f] hover:border-[#2323FF] hover:text-[#2323FF] dark:border-white/15 dark:text-white dark:hover:text-white"
+            : "border border-[#2323FF]/70 bg-white/70 text-[#2323FF] hover:border-[#2323FF] hover:bg-[#2323FF]/[0.06] dark:border-[#2323FF]/60 dark:bg-transparent dark:text-[#7c7cff] dark:hover:bg-[#2323FF]/10"
         }`}
       >
         <span>{plan.cta}</span>
         <span
           className={`flex h-8 w-8 items-center justify-center rounded-full transition-transform duration-200 ease-out group-hover:rotate-45 ${
-            plan.highlight ? "bg-white text-[#2323FF]" : "bg-[#2323FF] text-white"
+            plan.highlight
+              ? "bg-white text-[#2323FF]"
+              : "border border-[#2323FF]/25 bg-[#2323FF]/10 text-[#2323FF]"
           }`}
         >
           <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />

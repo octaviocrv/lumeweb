@@ -229,7 +229,6 @@ const plans: Plan[] = [
       { text: "Google Analytics configurado", included: false },
       { text: "Entrega em até 5 dias" },
       { text: "1 rodada de alterações antes de publicar" },
-      { text: "Até 3 rodadas de alterações antes de publicar", included: false },
       { text: "Suporte de 7 dias após publicação" },
     ],
     cta: "Quero o Essencial",
@@ -1180,8 +1179,14 @@ function PlanCard({ plan, index }: { plan: Plan; index: number }) {
                       : isCompleteIncluded
                         ? "text-[#0a0a0f]/85 dark:text-white/85"
                         : ""
-                  } ${!included ? "line-through" : ""}`}
-                  style={useStrongText || isCompleteIncluded ? display : { ...display, ...muted }}
+                  }`}
+                  style={
+                    !included
+                      ? { ...display, ...muted, opacity: 0.65 }
+                      : useStrongText || isCompleteIncluded
+                        ? display
+                        : { ...display, ...muted }
+                  }
                 >
                   {feature.text}
                 </span>

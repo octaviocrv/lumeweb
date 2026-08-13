@@ -33,11 +33,11 @@ const skills = [
   { icon: Code2, label: "Design sob medida" },
   { icon: Palette, label: "Site rápido e responsivo" },
   { icon: Rocket, label: "Otimizado para o Google" },
-  { icon: Sparkles, label: "Suporte durante todo processo" },
+  { icon: Sparkles, label: "Suporte durante todo o processo" },
 ];
 
 const stats = [
-  { value: "3", label: "Anos dentro do mercado" },
+  { value: "3", label: "Anos de mercado" },
   { value: "46", label: "Projetos entregues" },
   { value: "98%", label: "Clientes que indicam meu trabalho" },
 ];
@@ -202,13 +202,9 @@ export default function AboutSection() {
                 className="relative mt-5 max-w-[560px] text-[16px] leading-7 text-balance sm:text-[17px]"
                 style={{ ...display, ...muted }}
               >
-                Aparecer no Google ou ter um Instagram ativo virou o básico é só a porta de entrada.
-                O que realmente faz alguém confiar no seu trabalho é o que essa pessoa encontra
-                depois de clicar no seu link.
+                Aparecer no Google, ou ter um Instagram ativo, virou o básico: é só a porta de entrada. O que realmente faz alguém confiar no seu trabalho é o que essa pessoa encontra depois de clicar no seu link.
                 <br />
-                É o seu site que mostra o que você faz, transmite profissionalismo e conduz o
-                visitante até suas redes. Meu trabalho é construir essa ponte, para o cliente
-                fechar negócio com você.
+                É o seu site que apresenta o que você faz, transmite profissionalismo e conduz o visitante até o próximo passo. Meu trabalho é construir essa ponte para transformar visitantes em clientes.
               </p>
 
               {/* Imagem de apoio + selo, sobrepostos */}

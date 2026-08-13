@@ -13,25 +13,11 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Website Institucional Escola",
+    title: "Quinta Voolivre",
     subtitle: "Landing Page · Educação",
     href: "https://octaviocrv.github.io/website-institucional-escola/",
     image: "/projetos/SiteQuintalVooLivre.png",
-    alt: "Projeto Website Institucional Escola",
-  },
-  {
-    title: "PlanCompany Webinar",
-    subtitle: "Página de Conversão · Vendas",
-    href: "https://plancompany.com.br/webnar/#formulario",
-    image: "/projetos/SitePaginaVsl.png",
-    alt: "Projeto PlanCompany Webinar",
-  },
-  {
-    title: "FotosProfissionais",
-    subtitle: "Landing Page · SaaS",
-    href: "https://www.fotosprofissionais.com/",
-    image: "/projetos/SiteFotosProfissionais.png",
-    alt: "Projeto FotosProfissionais",
+    alt: "Projeto Quinta Voolivre",
   },
   {
     title: "DeltaMat",
@@ -41,18 +27,11 @@ const projects: Project[] = [
     alt: "Projeto DeltaMat",
   },
   {
-    title: "Diagnóstico de Vendas",
-    subtitle: "Landing Page · Diagnóstico Comercial",
-    href: "https://diagnostico-vendas.vercel.app/",
-    image: "/projetos/DiagnosticoEstrategicoComercial.png",
-    alt: "Projeto Diagnostico de Vendas",
-  },
-  {
-    title: "DivideJa",
-    subtitle: "Página de Login · Produto Digital",
-    href: "https://octaviocrv.github.io/divide-ja/src/pages/login/index.html",
-    image: "/projetos/SiteDivideJa.png",
-    alt: "Projeto DivideJa",
+    title: "Casa Junno",
+    subtitle: "Site Institucional · Moda",
+    href: "https://casajunnoo.com.br/",
+    image: "/projetos/SiteModaCasaJunno.png",
+    alt: "Projeto Casa Junno",
   },
   {
     title: "IndexMed",
@@ -62,66 +41,87 @@ const projects: Project[] = [
     alt: "Projeto IndexMed",
   },
   {
-    title: "Casa Junno",
-    subtitle: "Site Institucional · Moda",
-    href: "https://casajunnoo.com.br/",
-    image: "/projetos/SiteModaCasaJunno.png",
-    alt: "Projeto Casa Junno",
-  },
-  {
-    title: "Nerus",
-    subtitle: "Site Institucional · Tecnologia",
-    href: "https://nerus.com.br/",
-    image: "/projetos/SiteNerus.png",
-    alt: "Projeto Nerus",
-  },
-  {
     title: "LokGeo",
     subtitle: "Landing Page · Locação",
     href: "https://lokgeo.vercel.app/",
-    image: "/projetos/SiteLokGeo.png",
+    image: "/projetos/fotolokgeo2.png",
     alt: "Projeto LokGeo",
   },
-  {
-    title: "Casa Vento",
-    subtitle: "Site Institucional · Educação Infantil",
-    href: "https://casavento.com.br/",
-    image: "/projetos/casavento.png",
-    alt: "Projeto Casa Vento",
-  },
-  {
-    title: "Studio Up Fitness",
-    subtitle: "Landing Page · Academia",
-    href: "https://octaviocrv.github.io/Landing-Page-Academia/",
-    image: "/projetos/SiteAcademia.png",
-    alt: "Projeto Studio Up Fitness",
-  },
-  {
-    title: "Bruno Pedroso",
-    subtitle: "Landing Page · Portfólio",
-    href: "https://eubrunopedroso.vercel.app/",
-    image: "/projetos/brunogoogle.png",
-    alt: "Projeto Bruno Pedroso",
-  },
+  // {
+  //   title: "Bruno Pedroso",
+  //   subtitle: "Landing Page · Portfólio",
+  //   href: "https://eubrunopedroso.vercel.app/",
+  //   image: "/projetos/brunogoogle.png",
+  //   alt: "Projeto Bruno Pedroso",
+  // },
+  // {
+  //   title: "PlanCompany Webinar",
+  //   subtitle: "Página de Conversão · Vendas",
+  //   href: "https://plancompany.com.br/webnar/#formulario",
+  //   image: "/projetos/SitePaginaVsl.png",
+  //   alt: "Projeto PlanCompany Webinar",
+  // },
+  // {
+  //   title: "FotosProfissionais",
+  //   subtitle: "Landing Page · SaaS",
+  //   href: "https://www.fotosprofissionais.com/",
+  //   image: "/projetos/SiteFotosProfissionais.png",
+  //   alt: "Projeto FotosProfissionais",
+  // },
+  // {
+  //   title: "Diagnóstico de Vendas",
+  //   subtitle: "Landing Page · Diagnóstico Comercial",
+  //   href: "https://diagnostico-vendas.vercel.app/",
+  //   image: "/projetos/DiagnosticoEstrategicoComercial.png",
+  //   alt: "Projeto Diagnóstico de Vendas",
+  // },
+  // {
+  //   title: "DivideJa",
+  //   subtitle: "Página de Login · Produto Digital",
+  //   href: "https://octaviocrv.github.io/divide-ja/src/pages/login/index.html",
+  //   image: "/projetos/SiteDivideJa.png",
+  //   alt: "Projeto DivideJa",
+  // },
+  // {
+  //   title: "Nerus",
+  //   subtitle: "Site Institucional · Tecnologia",
+  //   href: "https://nerus.com.br/",
+  //   image: "/projetos/SiteNerus.png",
+  //   alt: "Projeto Nerus",
+  // },
+  // {
+  //   title: "Casa Vento",
+  //   subtitle: "Site Institucional · Educação Infantil",
+  //   href: "https://casavento.com.br/",
+  //   image: "/projetos/casavento.png",
+  //   alt: "Projeto Casa Vento",
+  // },
+  // {
+  //   title: "Studio Up Fitness",
+  //   subtitle: "Landing Page · Academia",
+  //   href: "https://octaviocrv.github.io/Landing-Page-Academia/",
+  //   image: "/projetos/SiteAcademia.png",
+  //   alt: "Projeto Studio Up Fitness",
+  // },
   {
     title: "Filhos de Música",
     subtitle: "Site Institucional · Música",
     href: "https://filhos-de-musica.vercel.app/",
     image: "/projetos/filhosdemusica.png",
-    alt: "Projeto Filhos de Musica",
+    alt: "Projeto Filhos de Música",
   },
-  {
-    title: "Takeosan",
-    subtitle: "Cardápio Digital · Restaurante",
-    href: "https://takeosan.menudino.com/",
-  },
-  {
-    title: "Multiverso Burguer",
-    subtitle: "Cardápio Online · Hamburgueria",
-    href: "https://multiversoburguer.netlify.app/",
-    image: "/projetos/multiversoburguer.png",
-    alt: "Projeto Multiverso Burguer",
-  },
+  // {
+  //   title: "Takeosan",
+  //   subtitle: "Cardápio Digital · Restaurante",
+  //   href: "https://takeosan.menudino.com/",
+  // },
+  // {
+  //   title: "Multiverso Burguer",
+  //   subtitle: "Cardápio Online · Hamburgueria",
+  //   href: "https://multiversoburguer.netlify.app/",
+  //   image: "/projetos/multiversoburguer.png",
+  //   alt: "Projeto Multiverso Burguer",
+  // },
 ];
 
 const fadeUp = {
@@ -164,7 +164,7 @@ export default function WorkSection() {
                 color: "color-mix(in oklab,var(--color-dark_black) 60%,transparent)",
               }}
             >
-              Sites desenvoldidos para clientes reais. Visite e comprove.
+              Alguns dos nossos sites desenvolvidos para clientes reais. Visite e comprove.
             </p>
           </motion.div>
 

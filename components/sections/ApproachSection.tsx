@@ -232,7 +232,7 @@ const plans: Plan[] = [
       { text: "Suporte de 7 dias após publicação" },
     ],
     cta: "Quero o Essencial",
-    message: "Ola!%20Quero%20o%20plano%20Essencial%20(R%24%20497).",
+    message: "Ol%C3%A1!%20Quero%20o%20plano%20Essencial%20(R%24%20497).",
   },
   {
     name: "Profissional",
@@ -259,7 +259,7 @@ const plans: Plan[] = [
       { text: "Meta Pixel para campanhas pagas", included: false },
     ],
     cta: "Quero o Profissional",
-    message: "Ola!%20Quero%20o%20plano%20Profissional%20(R%24%20897).",
+    message: "Ol%C3%A1!%20Quero%20o%20plano%20Profissional%20(R%24%20897).",
   },
   {
     name: "Completo",
@@ -282,7 +282,7 @@ const plans: Plan[] = [
       { text: "Suporte de 30 dias após publicação" },
     ],
     cta: "Quero o Completo",
-    message: "Ola!%20Quero%20o%20plano%20Completo%20(R%24%201.497).",
+    message: "Ol%C3%A1!%20Quero%20o%20plano%20Completo%20(R%24%201.497).",
   },
 ];
 
@@ -1068,7 +1068,7 @@ export default function ApproachSection() {
             </div>
 
             <a
-              href={`${WHATSAPP}Ola!%20Quero%20um%20orcamento%20para%20o%20meu%20site.`}
+              href={`${WHATSAPP}Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20o%20meu%20site.`}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex min-h-12 w-full items-center justify-between gap-3 rounded-full bg-white py-2 pl-5 pr-2 font-medium text-[#2323FF] transition-all duration-200 ease-out hover:-translate-y-px active:translate-y-0 active:scale-[0.98] sm:w-auto"

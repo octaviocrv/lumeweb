@@ -1,4 +1,4 @@
-# ✨ Lume Web
+# Lume Web
 
 [![Vercel Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://lume.web)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-000000?style=flat-square&logo=next.js)](https://nextjs.org)
